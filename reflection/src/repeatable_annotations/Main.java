@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
-import java.util.stream.Collectors;
 
 import static repeatable_annotations.annotations.Annotations.*;
 
@@ -114,7 +113,7 @@ public class Main {
 
         List<Path> files = Files.list(packagePath)
                 .filter(Files::isRegularFile)
-                .collect(Collectors.toList());
+                .toList();
 
         List<Class<?>> classes = new ArrayList<>();
 
